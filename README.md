@@ -5,7 +5,11 @@ A calculator function that outputs rem/px values depending on browser support. T
 
 ~~~scss
 .component {
-	margin-right: rem-calc(20);
+    margin-right: rem-calc(20);
+}
+
+h1 {
+    margin: rem-calc(0 20 10 10);
 }
 ~~~
 

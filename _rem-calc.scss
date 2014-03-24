@@ -8,46 +8,56 @@
 // Depending on the capabilities of the browser, this mixin will calculate REM
 // values from a pixel value.
 //
-// EXAMPLE
+// EXAMPLES
 //
 // h1 {
 //    margin-bottom: rem-calc(30);
 // }
 //
 // h1 {
-//  margin-bottom: 1.875rem;
+//    margin-bottom: 1.875rem;
 // }
 //
-// $target: (required) Required pixel size
-// $context: (optional) Current font size used to calculate em value
+// h2 {
+//    margin: rem-calc(10 20 30 40);
+// }
+//
+// h2 {
+//    margin-bottom: 0.625rem 1.25rem 1.875rem 2.5rem;
+// }
+//
+// $target: (required) Required pixel size. Multiple sizes as a list
 // Returns: Rem value
 //
 
-@function rem-calc($target, $context: $font-base-size) {
+@function rem-calc($target) {
 
-    @if map-get($supports, rem) == true {
-        // Export REM value of $target depending on base-font-size
-        $value: ($target / $context) * 1rem;
+    $max: length($target);
+    $values: ();
+    $context: $font-base-size;
 
 
-        @if abs($value) == 0 {
-            @return 0;
+    @for $i from 1 through $max {
+        $x: 0;
+
+        @if map-get($supports, rem) == true {
+
+            // Export REM value of $target depending on base-font-size
+            $x: (nth($target, $i) / $context) * 1rem;
+        }
+        @else {
+            $x: nth($target, $i) * 1px;
+        }
+
+        @if abs($x) == 0 {
+            $values: append($values, 0);
         }
 
         @else {
-            @return ($value);
+            $values: append($values, $x);
         }
+
     }
 
-    @else {
-        $value: ($target / $context) * 1px;
-
-        @if abs($value) == 0 {
-            @return 0;
-        }
-
-        @else {
-            @return ($value);
-        }
-    }
+    @return $values;
 }
