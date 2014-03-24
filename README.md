@@ -13,14 +13,24 @@ h1 {
 }
 ~~~
 
-### Set up
+## Set up
 
-1. `rem-calc` requires the `$font-base-size` variable to have a default value. Set this in the same file that you set default typographic settings.
-2. This function depends on a `$supports` map being set before this function is imported, like so:
+This function requires the `$font-base-size` variable to have a default value. Set this in the same file that you would the default typographic settings. For rem values to work effectively you need to then apply the `$font-base-size` to the `html` element in px, like so:
+
+~~~scss
+
+$font-base-size: 16;
+
+html {
+    font-size: ($font-base-size * 1px);
+}
+
+~~~
+
+This function also depends on a `$supports` map being set before this function is imported. This allows us to export a separate CSS file for specific browsers (such as IE8):
 
 ~~~scss 
 $supports: (
-    rem: true,
     svg: true
 );
 
