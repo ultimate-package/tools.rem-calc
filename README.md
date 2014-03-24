@@ -11,7 +11,7 @@ A calculator function that outputs rem/px values depending on browser support. T
 
 ## Set up
 
-- `rem-calc` requires the `$font-base-size` variable to have a default value. Set this in the same file that you would the default typographic settings. For rem values to work effectively you need to then apply the `$font-base-size` to the `html` element in px, like so:
+This function requires the `$font-base-size` variable to have a default value. Set this in the same file that you would the default typographic settings. For rem values to work effectively you need to then apply the `$font-base-size` to the `html` element in px, like so:
 
 ~~~scss
 
@@ -23,11 +23,10 @@ html {
 
 ~~~
 
-- This function also depends on a `$supports` map being set before this function is imported. This allows us to export a separate CSS file for specific browsers (such as IE8):
+This function also depends on a `$supports` map being set before this function is imported. This allows us to export a separate CSS file for specific browsers (such as IE8):
 
 ~~~scss 
 $supports: (
-    rem: true,
     svg: true
 );
 
