@@ -2,9 +2,8 @@
 // REM FUNCTION
 // ==========================================================================
 //
-// Calculates rem size based on required pixel size and context. It takes
-// the $font-base-size from _typographic-scale.scss and uses that as the
-// context.
+// Calculates rem size based on required pixel size and context. It uses 
+// $font-base-size and uses that as the context.
 //
 // Depending on the capabilities of the browser, this mixin will calculate REM
 // values from a pixel value.
