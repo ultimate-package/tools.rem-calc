@@ -36,21 +36,3 @@ $supports: (
 
 @import 'tools/rem-calc';
 ~~~
-
-
-
-## Authors
-
-| [![twitter/robinrendle](https://gravatar.com/avatar/3232e4cdc4a5e51c4bfb3bbed0d6abd5)](http://twitter.com/robinrendle "Follow @robinrendle on Twitter") |
-|---|
-| [Robin Rendle](http://robinrendle.com) |
-
-
-| [![twitter/metadaptive](https://gravatar.com/avatar/3232e4cdc4a5e51c4bfb3bbed0d6abd5)](http://twitter.com/metadaptive "Follow @metadaptive on Twitter") |
-|---|
-| [Tom Davies](http://metadaptive.com) |
-
-
-| [![twitter/mathaywarduk](http://www.gravatar.com/avatar/f38afd846cb1a7a8e4b5d16c14188fc2.png)](http://twitter.com/mathaywarduk "Follow @mathaywarduk on Twitter") |
-|---|
-| [Mat Hayward](http://www.mathayward.com/) |
