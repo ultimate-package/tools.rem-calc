@@ -1,0 +1,54 @@
+// ==========================================================================
+// REM FUNCTION
+// ==========================================================================
+//
+// Calculates rem size based on required pixel size and context. It takes
+// the $font-base-size from _typographic-scale.scss and uses that as the
+// context.
+//
+// Depending on the capabilities of the browser, this mixin will calculate REM
+// values from a pixel value.
+//
+// EXAMPLE
+//
+// h1 {
+//    margin-bottom: rem-calc(30);
+// }
+//
+// h1 {
+//  margin-bottom: 1.875rem;
+// }
+//
+// $target: (required) Required pixel size
+// $context: (optional) Current font size used to calculate em value
+// Returns: Rem value
+//
+
+@function rem-calc($target, $context: $font-base-size) {
+
+    @if map-get($supports, rem) == true {
+        // Export REM value of $target depending on base-font-size
+        $value: ($target / $context) * 1rem;
+
+
+        @if abs($value) == 0 {
+            @return 0;
+        }
+
+        @else {
+            @return ($value);
+        }
+    }
+
+    @else {
+        $value: ($target / $context) * 1px;
+
+        @if abs($value) == 0 {
+            @return 0;
+        }
+
+        @else {
+            @return ($value);
+        }
+    }
+}
