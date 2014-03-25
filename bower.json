@@ -1,0 +1,21 @@
+{
+  "name": "ultimate-package-rem-calc",
+  "version": "1.0.0",
+  "homepage": "https://github.com/ultimate-package/tools.rem-calc",
+  "authors": [
+    "Robin Rendle <robin@erskinedesign.com>"
+  ],
+  "description": "A calculator function that outputs rem/px values depending on browser support.",
+  "main": "_tools.rem-calc.scss",
+  "keywords": [
+    "ultimate-package",
+    "oocss",
+    "sass"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ]
+}
